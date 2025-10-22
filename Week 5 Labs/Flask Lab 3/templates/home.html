@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to the Flask Web App!</h1>
+    <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Home Image" style="width:300px;"><br>
+    <p>This is the home page.</p>
+    <a href="/about">Go to About Page</a><br>
+    <a href="/register">Register</a><br>
+    <a href="/data">View Data</a>
+</body>
+</html>
