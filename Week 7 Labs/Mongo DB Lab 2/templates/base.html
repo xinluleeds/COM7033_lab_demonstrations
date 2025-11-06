@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>World Database Manager</title>
+    <style>
+        body {font-family: system-ui, Arial, sans-serif; max-width: 900px; margin: 30px auto;}
+        header {display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;}
+        a.button, button.button, input.button {background: #222; color: #fff; padding: 6px 12px; border-radius: 6px; border: none; text-decoration: none; cursor: pointer;}
+        a.button:hover, button.button:hover, input.button:hover {background: #444;}
+        table.data {border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.9rem;}
+        table.data th, table.data td {border: 1px solid #aaa; padding: 6px 8px; text-align: left;}
+        form.inline {display: inline;}
+        form label {display: block; margin-top: 10px; font-weight: 600;}
+        form input[type="text"], form input[type="number"] {width: 100%; padding: 6px 8px; border: 1px solid #aaa; border-radius: 4px;}
+        .card {background: #f8f8f8; padding: 1rem 1.2rem; border-radius: 8px; border: 1px solid #ddd; margin: 1rem 0;}
+    </style>
+</head>
+<body>
+<header>
+    <div><strong>World DB Admin</strong></div>
+    <nav>
+        <a class="button" href="{{ url_for('index') }}">Home</a>
+        <a class="button" href="{{ url_for('add_form') }}">Add New Record</a>
+    </nav>
+</header>
+{% block content %}{% endblock %}
+</body>
+</html>
