@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Login (by Username)</h2>
+<form method="post" class="bg-white p-4 rounded shadow-sm">
+  <div class="mb-3"><label class="form-label">Username</label><input class="form-control" name="username" required></div>
+  <div class="mb-3"><label class="form-label">Password</label><input class="form-control" name="password" type="password" required></div>
+  <button class="btn btn-success">Login</button>
+</form>
+<p class="mt-3 text-muted">Default admin: <code>Administrator / AdminPass123!</code></p>
+{% endblock %}

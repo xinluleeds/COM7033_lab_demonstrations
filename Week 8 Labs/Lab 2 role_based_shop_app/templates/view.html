@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}All Shopping Records{% endblock %}
+{% block content %}
+<h2>All Shopping Records (Admin)</h2>
+{% if data %}
+  <table class="table table-striped">
+    <thead>
+      <tr><th>Customer ID</th><th>Date</th><th>Item</th><th>Qty</th><th>Price</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      {% for r in data %}
+      <tr>
+        <td>{{ r.get('customer_id','') }}</td>
+        <td>{{ r.get('date','') }}</td>
+        <td>{{ r.get('item','') }}</td>
+        <td>{{ r.get('qty','') }}</td>
+        <td>{{ r.get('price','') }}</td>
+        <td>{{ r.get('notes','') }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>No data loaded yet.</p>
+{% endif %}
+{% endblock %}

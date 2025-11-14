@@ -1,0 +1,4 @@
+email,item,price,qty,date,notes
+user1@example.com,Apples,2.5,3,2025-11-01,Granny Smith
+user2@example.com,Bread,1.2,1,2025-11-02,Wholemeal
+user1@example.com,Milk,0.9,2,2025-11-03,2% fat

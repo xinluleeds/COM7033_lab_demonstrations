@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Upload CSV{% endblock %}
+{% block content %}
+<h2>Upload Shopping CSV</h2>
+<form method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label class="form-label">CSV File</label>
+    <input class="form-control" type="file" name="file" accept=".csv" required>
+    <div class="form-text">Required columns: customer_id, item, price, qty, date (notes optional)</div>
+  </div>
+  <button class="btn btn-success">Upload</button>
+</form>
+{% endblock %}

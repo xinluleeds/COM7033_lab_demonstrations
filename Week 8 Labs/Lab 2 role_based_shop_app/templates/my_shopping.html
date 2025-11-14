@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}My Shopping{% endblock %}
+{% block content %}
+<h2>My Shopping Records</h2>
+{% if records %}
+  <table class="table table-striped">
+    <thead>
+      <tr><th>Date</th><th>Item</th><th>Qty</th><th>Price</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      {% for r in records %}
+        <tr>
+          <td>{{ r['date'] if r['date'] else '' }}</td>
+          <td>{{ r.get('item','') }}</td>
+          <td>{{ r.get('qty','') }}</td>
+          <td>{{ r.get('price','') }}</td>
+          <td>{{ r.get('notes','') }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>No records found.</p>
+{% endif %}
+{% endblock %}

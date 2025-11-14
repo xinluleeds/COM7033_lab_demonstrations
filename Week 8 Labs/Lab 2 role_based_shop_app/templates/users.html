@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Users{% endblock %}
+{% block content %}
+<h2>All Users</h2>
+<table class="table table-hover align-middle">
+  <thead>
+    <tr><th>ID</th><th>Username</th><th>Customer ID</th><th>Gender</th><th>Age</th><th>Admin</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    {% for u in users %}
+      <tr>
+        <td>{{ u['id'] }}</td>
+        <td>{{ u['username'] }}</td>
+        <td>{{ u['customer_id'] }}</td>
+        <td>{{ u['gender'] }}</td>
+        <td>{{ u['age'] }}</td>
+        <td>{{ 'Yes' if u['is_admin'] else 'No' }}</td>
+        <td>
+          {% if not u['is_admin'] %}
+          <form method="post" action="{{ url_for('delete_user', customer_id=u['customer_id']) }}" onsubmit="return confirm('Delete this user and their shopping records?');">
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </form>
+          {% else %}
+            <span class="text-muted">—</span>
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

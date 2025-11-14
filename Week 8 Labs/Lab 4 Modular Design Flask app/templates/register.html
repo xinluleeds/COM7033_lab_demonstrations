@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Register</h2>
+<form method="post" class="bg-white p-4 rounded shadow-sm">
+  <div class="mb-3"><label class="form-label">Username</label><input class="form-control" name="username" required></div>
+  <div class="mb-3"><label class="form-label">Customer ID</label><input class="form-control" name="customer_id" required></div>
+  <div class="mb-3"><label class="form-label">Gender</label><input class="form-control" name="gender" required></div>
+  <div class="mb-3"><label class="form-label">Age</label><input class="form-control" name="age" type="number" min="1" required></div>
+  <div class="mb-3"><label class="form-label">Password</label><input class="form-control" name="password" type="password" required></div>
+  <div class="mb-3"><label class="form-label">Confirm Password</label><input class="form-control" name="confirm" type="password" required></div>
+  <button class="btn btn-primary">Register</button>
+</form>
+{% endblock %}

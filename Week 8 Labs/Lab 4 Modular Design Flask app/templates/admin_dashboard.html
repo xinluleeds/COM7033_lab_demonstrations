@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<div class="d-flex gap-2 mb-3">
+  <a class="btn btn-primary" href="{{ url_for('admin_users') }}">Manage Users</a>
+  <a class="btn btn-secondary" href="{{ url_for('upload') }}">Upload CSV</a>
+  <a class="btn btn-outline-dark" href="{{ url_for('admin_view_all') }}">View All Shopping</a>
+</div>
+<p class="text-muted">Admin-only tools.</p>
+{% endblock %}

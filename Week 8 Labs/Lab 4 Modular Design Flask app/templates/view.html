@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Shopping Data</h2>
+<div class="table-responsive bg-white p-3 rounded shadow-sm">
+  <table class="table table-sm">
+    <thead><tr><th>Customer</th><th>Item</th><th>Qty</th><th>Price</th><th>Date</th><th>Uploaded By</th></tr></thead>
+    <tbody>
+    {% for r in data %}
+      <tr><td>{{ r.get('customer_id') }}</td><td>{{ r.get('item') }}</td><td>{{ r.get('qty') }}</td><td>{{ r.get('price') }}</td><td>{{ r.get('date') }}</td><td>{{ r.get('uploaded_by') }}</td></tr>
+    {% else %}
+      <tr><td colspan="6" class="text-muted">No data.</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

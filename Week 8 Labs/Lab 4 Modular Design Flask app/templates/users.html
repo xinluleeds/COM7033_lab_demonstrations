@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Users</h2>
+<div class="table-responsive bg-white p-3 rounded shadow-sm">
+  <table class="table table-sm align-middle">
+    <thead><tr><th>ID</th><th>Username</th><th>Customer ID</th><th>Gender</th><th>Age</th><th>Role</th><th></th></tr></thead>
+    <tbody>
+    {% for u in users %}
+      <tr>
+        <td>{{ u.id }}</td><td>{{ u.username }}</td><td>{{ u.customer_id }}</td><td>{{ u.gender }}</td><td>{{ u.age }}</td>
+        <td>{% if u.is_admin %}<span class="badge bg-primary">Admin</span>{% else %}<span class="badge bg-secondary">User</span>{% endif %}</td>
+        <td>
+          {% if not (session.get('customer_id') == u.customer_id and u.is_admin) %}
+          <form method="post" action="{{ url_for('delete_user', customer_id=u.customer_id) }}" onsubmit="return confirm('Delete this user?');">
+            <button class="btn btn-sm btn-danger">Delete</button>
+          </form>
+          {% else %}<small class="text-muted">You</small>{% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

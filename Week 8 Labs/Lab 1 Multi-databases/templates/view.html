@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Stored Shopping Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Invoice No</th>
+                <th>Customer ID</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Payment Method</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item['invoice_no'] }}</td>
+                <td>{{ item['customer_id'] }}</td>
+                <td>{{ item['gender'] }}</td>
+                <td>{{ item['age'] }}</td>
+                <td>{{ item['category'] }}</td>
+                <td>{{ item['quantity'] }}</td>
+                <td>{{ item['price'] }}</td>
+                <td>{{ item['payment_method'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/upload">Upload Another CSV</a>
+</body>
+</html>

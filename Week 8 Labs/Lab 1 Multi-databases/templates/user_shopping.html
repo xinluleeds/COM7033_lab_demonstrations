@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Shopping Information</title>
+</head>
+<body>
+    <h2>Shopping Information for {{ username }}</h2>
+    {% if shopping_data %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Date Purchased</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in shopping_data %}
+            <tr>
+                <td>{{ item['category'] }}</td>
+                <td>{{ item['price'] }}</td>
+                <td>{{ item['quantity'] }}</td>
+                <td>{{ item['payment_method'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No shopping data found for this Customer ID.</p>
+    {% endif %}
+</body>
+</html>

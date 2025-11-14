@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="POST" action="/register">
+        <label>Username:</label><br>
+        <input type="text" name="username" required><br><br>
+        <label>Customer ID:</label><br>
+        <input type="text" name="customer_id" required><br><br>
+        <label>Gender:</label><br>
+        <input type="text" name="gender" required><br><br>
+        <label>Age:</label><br>
+        <input type="number" name="age" required><br><br>
+        <label>Password:</label><br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Register</button>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
